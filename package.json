@@ -1,0 +1,30 @@
+{
+  "name": "fastpi",
+  "description": "A quick way to get started with Fastify using TypeScript",
+  "version": "0.0.0",
+  "repository": "git@github.com:luastoned/fastpi.git",
+  "author": "Gregor Steiner <spacegregor@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "yarn build:esbuild",
+    "build:esbuild": "esbuild src/app.ts --outdir=dist --platform=node --target=node18 --bundle",
+    "build:typescript": "tsc --noEmit",
+    "serve": "yarn serve:node",
+    "serve:node": "node dist/app.js",
+    "serve:tsx": "tsx src/app.ts",
+    "start": "tsx src/app.ts",
+    "dev": "tsx watch src/app.ts"
+  },
+  "dependencies": {
+    "fastify": "^4.19.2",
+    "fastify-plugin": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.0",
+    "esbuild": "^0.18.11",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  }
+}
