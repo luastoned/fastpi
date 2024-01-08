@@ -18,13 +18,13 @@
     "dev": "tsx watch src/app.ts"
   },
   "dependencies": {
-    "fastify": "^4.25.1",
+    "fastify": "^4.25.2",
     "fastify-plugin": "^4.5.1"
   },
   "devDependencies": {
-    "@types/node": "^20.10.5",
-    "esbuild": "^0.19.10",
-    "tsx": "^4.6.2",
+    "@types/node": "^20.10.7",
+    "esbuild": "^0.19.11",
+    "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   }
 }
