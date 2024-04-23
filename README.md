@@ -31,7 +31,7 @@
   yarn
   ```
 
-5. Serve with hot reload at http://localhost:5173.
+5. Serve with hot reload at http://localhost:42000.
   ```bash
   yarn dev
   ```
