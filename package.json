@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "build": "yarn build:esbuild",
-    "build:esbuild": "esbuild src/app.ts --outdir=dist --platform=node --target=node18 --bundle",
+    "build:esbuild": "esbuild src/app.ts --outdir=dist --platform=node --target=node20 --bundle",
     "build:typescript": "tsc --noEmit",
     "serve": "yarn serve:node",
     "serve:node": "node dist/app.js",
@@ -22,6 +22,7 @@
     "fastify-plugin": "^4.5.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.7.1",
     "@types/node": "^20.12.7",
     "esbuild": "^0.20.2",
     "tsx": "^4.7.2",
