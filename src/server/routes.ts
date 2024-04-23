@@ -1,4 +1,4 @@
-import { FastifyInstance, FastifyPluginOptions, FastifyReply, FastifyRequest } from 'fastify';
+import type { FastifyInstance, FastifyPluginOptions, FastifyReply, FastifyRequest } from 'fastify';
 
 const home = async (req: FastifyRequest, res: FastifyReply) => {
   return { statusCode: 200, message: 'i am the backend' };

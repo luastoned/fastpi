@@ -1,4 +1,5 @@
-import fastify, { FastifyInstance, FastifyReply, FastifyRequest, FastifyServerOptions } from 'fastify';
+import fastify from 'fastify';
+import type { FastifyInstance, FastifyReply, FastifyRequest, FastifyServerOptions } from 'fastify';
 
 import { responseTime } from './plugins/responseTime';
 import { registerRoutes } from './routes';
@@ -12,7 +13,7 @@ const serverOptions: FastifyServerOptions = {
   bodyLimit: 1024 * 1024 * 16,
 };
 
-export const startServer = async (decorators: Record<string, any> = {}): Promise<FastifyInstance> => {
+export const startServer = async (decorators: Record<string, unknown> = {}): Promise<FastifyInstance> => {
   const server = fastify(serverOptions);
 
   // Register Plugins
@@ -28,12 +29,13 @@ export const startServer = async (decorators: Record<string, any> = {}): Promise
 
   server.addHook('onRequest', async (req: FastifyRequest, res: FastifyReply) => {
     for (const [key, decorator] of Object.entries(decorators)) {
+      // @ts-ignore
       req[key] = decorator;
     }
   });
 
   server.addHook('onResponse', async (req: FastifyRequest, res: FastifyReply) => {
-    // console.log('[x-res-time]', roundTo(res.getResponseTime(), 3), res.getHeader('X-Response-Time'));
+    // console.log('[x-res-time]', res.getHeader('X-Response-Time'), res.elapsedTime);
   });
 
   try {
