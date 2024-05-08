@@ -14,6 +14,9 @@
     "serve": "yarn serve:node",
     "serve:node": "node dist/app.js",
     "serve:tsx": "tsx src/app.ts",
+    "docker": "yarn docker:build && yarn docker:run",
+    "docker:build": "docker build -t fastpi .",
+    "docker:run": "docker run --rm --name fastpi -p 42000:42000 -it fastpi",
     "start": "tsx src/app.ts",
     "dev": "tsx watch src/app.ts"
   },
