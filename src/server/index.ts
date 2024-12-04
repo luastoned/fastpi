@@ -35,7 +35,7 @@ export const startServer = async (decorators: Record<string, unknown> = {}): Pro
   });
 
   server.addHook('onResponse', async (req: FastifyRequest, res: FastifyReply) => {
-    // console.log('[x-res-time]', res.getHeader('X-Response-Time'), res.elapsedTime);
+    // console.log('[x-res-time]', res.getHeader('X-Response-Time'), res.getHeader('X-Elapsed-Time'), res.elapsedTime);
   });
 
   try {
